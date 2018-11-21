@@ -6,6 +6,7 @@ var bodyParse = require('body-parser');
 var app = express();
 
 // load routes
+var userRoutes = require('./routes/user');
 
 app.use(bodyParse.urlencoded({extended:false}));
 app.use(bodyParse.json());
@@ -14,9 +15,6 @@ app.use(bodyParse.json());
 
 
 // base routes
-
-app.get('/pruebas', (req, res) =>{
-    res.status(200).send({message: 'api rest funcionando'})
-});
+app.use('/api', userRoutes);
 
 module.exports = app;
