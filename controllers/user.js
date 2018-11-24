@@ -88,8 +88,7 @@ function updateUser(req, res) {
     var userId = req.params.id;
     var update = req.body;
 
-    User.findOneAndUpdate(userId, update, (err,userUpdated) => {
-    // User.findByIdAndUpdate(userId, update, (err,userUpdated) => {
+    User.findByIdAndUpdate(userId, update, (err,userUpdated) => {
         if(err) {
             res.status(500).send({message: 'Error when updating the user'});
         }else{
