@@ -9,6 +9,7 @@ var app = express();
 var userRoutes = require('./routes/user');
 var artistRoutes = require('./routes/artist');
 var albumRoutes = require('./routes/album');
+var songRoutes = require('./routes/song');
 
 app.use(bodyParse.urlencoded({extended:false}));
 app.use(bodyParse.json());
@@ -20,5 +21,6 @@ app.use(bodyParse.json());
 app.use('/api', userRoutes);
 app.use('/api', artistRoutes);
 app.use('/api', albumRoutes);
+app.use('/api', songRoutes);
 
 module.exports = app;
