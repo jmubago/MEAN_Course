@@ -133,7 +133,6 @@ function uploadImage (req, res) {
             res.status(200).send({message: 'Only valid file extensions are: .png, .jpg, .jpeg, and .gif'})
         }
 
-        console.log(file_path);
     }else{
         res.status(200).send({message: 'You have not uploaded any image'});
     }
